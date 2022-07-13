@@ -1,77 +1,43 @@
 import "./Sidebar.css";
 import logo from "../../assets/logo.png"
+import SideBarLink from "./SideBarLink";
 
-const Sidebar = ({ sidebarOpen, closeSidebar }) => {
+const Sidebar = ({ sidebarOpen, closeSideBar }) => {
   return (
-    <div id="sidebar" className={sidebarOpen ? "sidebar__responsive" : ""}>
+    <div id="sidebar" className={sidebarOpen ? "sidebar_responsive" : ""}>
       <div className="sidebar__title">
         <div className="sidebar__img">
           <img src={logo} alt="Logo" />
           <h1>Ninjasoft</h1>
         </div>
         <i
-          onClick={() => closeSidebar()}
+          onClick={() => closeSideBar()}
           className="fa fa-times"
           id="sidebarIcon"
           aria-hidden="true"
         ></i>
       </div>
+      
+    // Links Start here
       <div className="sidebar__menu">
-        <div className="sidebar__link active_menu_link">
-          <i className="fa fa-home"></i>
-          <a href="#">Dashboard</a>
-        </div>
+        <SideBarLink linkName="Dashboard" linkPath="/" linkIcon="fa fa-home"></SideBarLink>
         <h2>MNG</h2>
-        <div className="sidebar__link">
-          <i className="fa fa-user-secret"></i>
-            <a href="#"> Admin Management </a>
-        </div>
-        <div className="sidebar__link">
-          <i className="fa fa-building-o"></i>
-            <a href="#">Company Management</a>
-        </div>
-        <div className="sidebar__link">
-          <i className="fa fa-wrench"></i>
-          <a href="#"> Employee Management</a>
-        </div>
-        <div className="sidebar__link">
-          <i className="fa fa-archive"></i>
-          <a href="#"> Warehouse</a>
-        </div>
-        <div className="sidebar__link">
-          <i className="fa fa-handshake-o"></i>
-          <a href="#">Contract</a>
-        </div>
+        <SideBarLink linkName={"Admin Management"} linkPath={"/"} LinkIcon="fa fa-user-secret" />
+        <SideBarLink linkName={"Company Management"}	linkPath={"/"} LinkIcon="fa fa-building o" />
+        <SideBarLink linkName={"Employee Management"}	linkPath={"/"} LinkIcon="fa fa-wrench" />
+        <SideBarLink linkName={"Warehouse"}	linkPath={"/"} LinkIcon="fa fa-archive" />
+        <SideBarLink linkName={"Contract"}	linkPath={"/"} LinkIcon="fa fa-handshake-o" />
+
         <h2>Leave</h2>
-        <div className="sidebar__link">
-          <i className="fa fa-question"></i>
-          <a href="#">Request</a>
-        </div>
-        <div className="sidebar__link">
-          <i className="fa fa-sign-out"></i>
-          <a href="#">Leave Policy</a>
-        </div>
-        <div className="sidebar__link">
-          <i className="fa fa-calendar-check-o"></i>
-          <a href="#">Special Days</a>
-        </div>
-        <div className="sidebar__link">
-          <i className="fa fa-files-o"></i>
-          <a href="#">Apply for Leave</a>
-        </div>
+        <SideBarLink linkName={"Request"}	linkPath={"/"} LinkIcon="fa fa-question" />
+        <SideBarLink linkName={"Leave Policy"}	linkPath={"/"} LinkIcon="fa fa-sign-out" />
+        <SideBarLink linkName={"Special Days"}	linkPath={"/"} LinkIcon="fa fa-calendar-check-o" />
+        <SideBarLink linkName={"Apply for Leave"}	linkPath={"/"} LinkIcon="fa fa-files-o" />
+      
         <h2>Payroll</h2>
-        <div className="sidebar__link">
-          <i className="fa fa-money"></i>
-          <a href="#">Payroll</a>
-        </div>
-        <div className="sidebar__link">
-          <i className="fa fa-briefcase"></i>
-          <a href="#">Paygradee</a>
-        </div>
-        <div className="sidebar__link">
-          <i className="fa fa-power-off"></i>
-          <a href="#">Log Out</a>
-        </div>
+        <SideBarLink linkName={"Payroll"}	linkPath={"/"} LinkIcon="fa fa-money" />
+        <SideBarLink linkName={"Paygrade"}	linkPath={"/"} LinkIcon="fa fa-briefcase" />
+        <SideBarLink linkName={"Log Out"}	linkPath={"/"} LinkIcon="fa fa-power-off" />
       </div>
     </div>
   )

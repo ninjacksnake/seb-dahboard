@@ -26,7 +26,7 @@
     font-weight: 700;
 }
 
-.navbar__left .active_link {
+.navbar__left .active {
     color: #265acc;
     border-bottom: 3px solid #265aac;
     padding-bottom: 12px;

@@ -1,5 +1,6 @@
 import "./Navbar.css";
 import avatar from "../../assets/avatar.svg";
+import {Link, NavLink } from 'react-router-dom'
 
 const Navbar = ({ sidebarOpen, openSideBar }) => {
     return (
@@ -8,9 +9,9 @@ const Navbar = ({ sidebarOpen, openSideBar }) => {
                 <i className="fa fa-bars"></i>
             </div>
             <div className="navbar__left">
-                <a href="#" >Tickets</a>
-                <a href="#" >Configuration</a>
-                <a className="active_link" href="#" >Admin</a>
+                <NavLink to='/'>Dashboard</NavLink>  
+                <NavLink to="/tickets">Tickets</NavLink>
+                <NavLink to='/configuration'>Configuration</NavLink> 
             </div>
             <div className="navbar__right">
                 <a href="#">

@@ -1,7 +1,12 @@
 import { useState } from 'react'
-import Main from './components/main/Main';
+import Main from './pages/Main';
 import Navbar from './components/navbar/Navbar';
 import Sidebar from './components/sidebar/Sidebar';
+import { BrowserRouter, Routes, Route } from 'react-router-dom';
+import  Configuration from './pages/Configuration';
+import Tickets from './pages/Tickets';
+import Admin from './pages/Admin'; 
+
 
 const App = () => {
 
@@ -19,9 +24,16 @@ const App = () => {
 
   return (
     <div className="container">
-      <Navbar sidebarOpen={sidebarOpen} openSideBar ={openSideBar} />
-      <Main />
-      <Sidebar sidebarOpen={sidebarOpen} closeSideBar={closeSideBar} />
+      <BrowserRouter>
+        <Navbar sidebarOpen={sidebarOpen} openSideBar={openSideBar} />
+        <Routes>
+          <Route path="/admin" element={<Admin />} />
+          <Route path="/tickets" element={<Tickets />} />
+          <Route path="/configuration" element={<Configuration />} />
+          <Route path="/" element={<Main />} />
+        </Routes>
+        <Sidebar sidebarOpen={sidebarOpen} closeSideBar={closeSideBar} />
+      </BrowserRouter>
     </div>
   )
 }

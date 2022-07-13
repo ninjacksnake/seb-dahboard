@@ -1,37 +1,19 @@
-import "../../../node_modules/react-vis/dist/style.css";
-import { XYPlot, LineSeries, XAxis, YAxis, VerticalGridLines, HorizontalGridLines } from "react-vis";
+import './Chart.css'
+import { LineChart, Line, CartesianGrid, XAxis, YAxis } from "recharts";
+import { useState, useEffect } from 'react';
 
-
-const Chart = () => {
-    const styles = {
-        chartContainer: {
-            marginTop: '15px',
-        },
-    }
-    const data = [
-        { x: 1, y: 8 },
-        { x: 2, y: 5 },
-        { x: 3, y: 4 },
-        { x: 4, y: 9 },
-        { x: 5, y: 1 },
-        { x: 6, y: 7 },
-        { x: 7, y: 6 },
-        { x: 8, y: 2 },
-        { x: 9, y: 0 },
-    ]
-    return (
-        <div style={styles.chartContainer}>
-            <XYPlot height={300} width={300}>
-                <VerticalGridLines />
-                <HorizontalGridLines />
-                <XAxis />
-                <YAxis />
-                <LineSeries data={data} color="red"/>
-                <LineSeries data={data} color="purple"/>
-                <LineSeries data={data} color="yellow"/>
-            </XYPlot>
-        </div>
-
+const Chart = ({data}) => {
+    const [lineData, setLineData] = useState(data);
+    useEffect(() => {
+        setLineData(data);
+      }, [data]);
+       return (
+        <LineChart width={600} height={300} data={lineData} className="daily_report_chart">
+            <Line type="monotone" dataKey="uv" stroke="#8884d8" />
+            <CartesianGrid stroke="#ccc" />
+            <XAxis dataKey="name" />
+            <YAxis />
+        </LineChart>
     )
 }
 
