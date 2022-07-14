@@ -1,8 +1,8 @@
-import React from 'react'
+import React, { useEffect} from 'react'
 import './Main.css';
-import Card from "../components/cards/Card";
-import Chart_left from '../components/charts/charts_left/Chart_left';
-import Chart_right from '../components/charts/charts_right/Chart_right';
+import Card from "../../components/cards/Card";
+import Chart_left from '../../components/charts/charts_left/Chart_left';
+import Chart_right from '../../components/charts/charts_right/Chart_right';
 
 
 
@@ -27,11 +27,7 @@ const Main = () => {
             cardColor: "card_ligth_red",
             cardText: "Test",
             ammount: "500,000"
-        },
-    
-    
-    
-    
+        }, 
     ]
     return (
         <main>
