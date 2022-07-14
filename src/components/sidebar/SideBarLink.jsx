@@ -2,12 +2,16 @@ import React from 'react'
 import { NavLink } from 'react-router-dom'
 import './SideBarLink.css'
 
-const SideBarLink = ({linkName, linkPath, LinkIcon, isActive}) => {
+
+const SideBarLink = ({ linkName, linkPath, LinkIcon }) => {
     return (
         // 
-        <div className= {isActive? `sidebar__link  active_menu_link`: "sidebar__link"}> 
+        <div className="sidebar__link">
             <i className={LinkIcon}></i>
-            <NavLink to={linkPath}>{linkName}</NavLink>
+            <NavLink to={linkPath}
+            className = {({isActive})=>(isActive? "link_active": "")}>
+                {linkName}
+            </NavLink>
         </div>
     )
 }

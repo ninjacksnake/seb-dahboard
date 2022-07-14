@@ -73,7 +73,12 @@
     margin-right: 10px;
     font-size: 18px;
   } */
-  
+
+  .sidebar__menu > a:active{
+    background: rgba(62, 161, 117, 0.3);
+    color: #3ea175;
+  }
+
   .sidebar__logout {
     margin-top: 20px;
     padding: 10px;

@@ -6,11 +6,11 @@
   }
   
   .sidebar__link > a {
-    text-decoration: none;
-    color: #a5aaad;
-    font-weight: 700;
+    text-decoration: none; 
+   color: #a5aaad;
+   font-weight: 700;
   }
-  
+
   .sidebar__link > i {
     margin-right: 10px;
     font-size: 18px;
@@ -25,3 +25,11 @@
     color: #3ea175 !important;
   }
   
+  .link_active {
+    font-size: 20px;
+    padding: 5px 10px;/* text-decoration: underline cyan 4px !important; */
+    border:1px rgba(37, 146, 99, 0.27) solid;
+    border-radius: 8px;
+    background: rgba(62, 161, 117, 0.3);
+    color:#3ea175
+  }
